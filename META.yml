@@ -15,6 +15,7 @@ meta-spec:
 name: RT-Extension-PriorityAsString
 no_index:
   directory:
+    - etc
     - html
     - inc
   package:

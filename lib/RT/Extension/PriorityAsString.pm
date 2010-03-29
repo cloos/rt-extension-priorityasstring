@@ -15,6 +15,8 @@ RT::Extension::PriorityAsString - show priorities in RT as strings instead of nu
     # in RT config
     Set(@Plugins, qw(... RT::Extension::PriorityAsString ...));
 
+    # in extension config
+
     # Specify a mapping between priority strings and the internal
     # numeric representation
     Set(%PriorityAsString, (Low => 0, Medium => 50, High => 100));
@@ -33,6 +35,9 @@ RT::Extension::PriorityAsString - show priorities in RT as strings instead of nu
     make install (may need root permissions)
 
     Edit your /opt/rt3/etc/RT_SiteConfig.pm (example is in synopsis above)
+
+    Edit your /opt/rt3/local/plugins/RT-Extension-PriorityAsString/etc/PriorityAsString_Config.pm
+    and change the defaults
 
     rm -rf /opt/rt3/var/mason_data/obj
     Restart your webserver
