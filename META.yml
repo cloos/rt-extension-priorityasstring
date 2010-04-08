@@ -18,6 +18,7 @@ no_index:
     - etc
     - html
     - inc
+    - po
   package:
     - RT::Ticket
 requires:
