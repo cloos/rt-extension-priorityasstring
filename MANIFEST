@@ -1,7 +1,9 @@
 CHANGES
 etc/PriorityAsString_Config.pm
+html/Callbacks/PriorityAsString/Elements/Header/Head
 html/Callbacks/PriorityAsString/Elements/RT__Ticket/ColumnMap/Once
 html/Elements/SelectPriority
+html/NoAuth/css/priorityasstring.css
 html/Ticket/Elements/ShowPriority
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
