@@ -1,5 +1,5 @@
 <span class="ticket-info-priority-<% lc($current) %>"><% loc($current) %></span>\
-% if( "$current" ne "$final" ) {
+% if( "$current" ne "$final" and "$final" ne "None" ) {
 /<span class="ticket-info-final-priority-<% lc($final) %>"><% loc($final) %></span>
 % }
 <%ARGS>
