@@ -1,17 +1,27 @@
+.ticket-info-priority-none,
+.ticket-info-final-priority-none,
+.select-priority .none {
+  color: #999999;
+  font-weight: bold;
+}
+
 .ticket-info-priority-low,
 .ticket-info-final-priority-low,
 .select-priority .low {
-  color: #999999;
+  color: #316531;
+  font-weight: bold;
 }
 
 .ticket-info-priority-medium,
 .ticket-info-final-priority-medium,
 .select-priority .medium {
-  color: #000000;
+  color: #FFBF00;
+  font-weight: bold;
 }
 
 .ticket-info-priority-high,
 .ticket-info-final-priority-high,
 .select-priority .high {
   color: #BB3322;
+  font-weight: bold;
 }
