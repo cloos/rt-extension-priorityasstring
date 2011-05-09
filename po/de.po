@@ -1,11 +1,31 @@
-msgid "Normal"
-msgstr "Normal"
+msgid ""
+msgstr ""
+"Project-Id-Version: RT::Extension::PriorityAsString\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Christian Loos <cloos@netcologne.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Medium"
-msgstr "Mittel"
+#: etc/PriorityAsString_Config.pm:8
+msgid "Escalation"
+msgstr "Eskalation"
 
+#: etc/PriorityAsString_Config.pm:7
 msgid "High"
 msgstr "Hoch"
 
-msgid "Escalation"
-msgstr "Eskalation"
+#: etc/PriorityAsString_Config.pm:6
+msgid "Medium"
+msgstr "Mittel"
+
+#: etc/PriorityAsString_Config.pm:4
+msgid "None"
+msgstr "Keine"
+
+#: etc/PriorityAsString_Config.pm:5
+msgid "Normal"
+msgstr "Normal"
+
