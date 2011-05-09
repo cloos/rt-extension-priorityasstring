@@ -6,3 +6,6 @@ msgstr "Mittel"
 
 msgid "High"
 msgstr "Hoch"
+
+msgid "Escalation"
+msgstr "Eskalation"

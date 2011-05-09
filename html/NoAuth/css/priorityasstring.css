@@ -25,3 +25,11 @@
   color: #BB3322;
   font-weight: bold;
 }
+
+.ticket-info-priority-escalation,
+.ticket-info-final-priority-escalation,
+.select-priority .escalation {
+  color: white;
+  font-weight: bold;
+  background: #BB3322;
+  padding: .1em .2em;
