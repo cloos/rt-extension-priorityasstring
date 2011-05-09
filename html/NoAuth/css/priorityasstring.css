@@ -5,9 +5,9 @@
   font-weight: bold;
 }
 
-.ticket-info-priority-low,
-.ticket-info-final-priority-low,
-.select-priority .low {
+.ticket-info-priority-normal,
+.ticket-info-final-priority-normal,
+.select-priority .normal {
   color: #316531;
   font-weight: bold;
 }

@@ -1,5 +1,5 @@
-msgid "Low"
-msgstr "Niedrig"
+msgid "Normal"
+msgstr "Normal"
 
 msgid "Medium"
 msgstr "Mittel"
