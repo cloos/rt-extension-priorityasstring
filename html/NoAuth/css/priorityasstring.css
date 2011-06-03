@@ -1,30 +1,47 @@
+.label-box {
+    float: left;
+}
+
+.label-outer {
+    border-color: white;
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+.label-inner {
+    background-color: white;
+    margin: 0 -1px;
+    padding: 0 0.2em;
+    color: white;
+    font-size: 0.9em;
+}
+
 .ticket-info-priority-none,
 .ticket-info-final-priority-none {
-  color: #999999;
-  font-weight: bold;
+    border-color: #999999;
+    background-color: #999999;
 }
 
 .ticket-info-priority-normal,
 .ticket-info-final-priority-normal {
-  color: #316531;
-  font-weight: bold;
+    border-color: #316531;
+    background-color: #316531;
 }
 
 .ticket-info-priority-medium,
 .ticket-info-final-priority-medium {
-  color: #FFBF00;
-  font-weight: bold;
+    border-color: #FFBF00;
+    background-color: #FFBF00;
 }
 
 .ticket-info-priority-high,
 .ticket-info-final-priority-high {
-  color: #BB3322;
-  font-weight: bold;
+    border-color: #BB3322;
+    background-color: #BB3322;
 }
 
 .ticket-info-priority-escalation,
 .ticket-info-final-priority-escalation {
-  color: white;
-  font-weight: bold;
-  background: #BB3322;
-  padding: .1em .2em;
+    border-color: #FF00FF;
+    background-color: #FF00FF;
+}
