@@ -6,9 +6,9 @@ my $printer = sub {
     my ($class, $string) = @_;
     return '' unless defined $string && length $string;
 
-    my $escaped = $m->interp->apply_escapes($string, 'h');
+    my $lc_escaped = lc $m->interp->apply_escapes($string, 'h');
     my $loc_escaped = $m->interp->apply_escapes(loc($string), 'h');
-    return \( qq{<div class="label-box"><div class="label-outer ticket-info-$class-} . lc($escaped) . qq{"><div class="label-inner ticket-info-$class-} . lc($escaped) . qq{">$loc_escaped</div></div></div>} );
+    return \( qq{<div class="label-box"><div class="label-outer ticket-info-$class-$lc_escaped"><div class="label-inner ticket-info-$class-$lc_escaped">$loc_escaped</div></div></div>} );
     
 };
 foreach my $field (qw(Priority InitialPriority FinalPriority)) {
