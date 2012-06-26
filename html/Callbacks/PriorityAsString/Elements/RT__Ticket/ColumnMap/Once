@@ -8,8 +8,8 @@ my $printer = sub {
 
     my $lc_escaped = lc $m->interp->apply_escapes($string, 'h');
     my $loc_escaped = $m->interp->apply_escapes(loc($string), 'h');
-    return \( qq{<div class="label-box"><div class="label-outer ticket-info-$class-$lc_escaped"><div class="label-inner ticket-info-$class-$lc_escaped">$loc_escaped</div></div></div>} );
-    
+    return \( qq{<span class="ticket-info-$class-$lc_escaped">$loc_escaped</span>} );
+
 };
 foreach my $field (qw(Priority InitialPriority FinalPriority)) {
     $COLUMN_MAP->{ $field .'Number' } ||= $COLUMN_MAP->{ $field };

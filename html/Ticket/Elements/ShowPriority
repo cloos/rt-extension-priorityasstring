@@ -1,15 +1,6 @@
-<div class="label-box">
-    <div class="label-outer ticket-info-priority-<% lc($current) %>">
-        <div class="label-inner ticket-info-priority-<% lc($current) %>"><% loc($current) %></div>
-    </div>
-</div>\
+<span class="ticket-info-priority-<% lc($current) %>"><% loc($current) %></span>\
 % if( "$current" ne "$final" and "$final" ne "None" ) {
-<div style="float: left; margin: 0 0.2em;">&nbsp;</div>
-<div class="label-box">
-    <div class="label-outer ticket-info-final-priority-<% lc($final) %>">
-        <div class="label-inner ticket-info-final-priority-<% lc($final) %>"><% loc($final) %></div>
-    </div>
-</div>
+/<span class="ticket-info-final-priority-<% lc($final) %>"><% loc($final) %></span>
 % }
 <%ARGS>
 $Ticket => undef
