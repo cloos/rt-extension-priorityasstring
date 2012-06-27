@@ -91,6 +91,44 @@ sub _PriorityAsString {
     return "unknown";
 }
 
+use RT::Transaction;
+$RT::Transaction::_BriefDescriptions{'Set'} = sub {
+    my $self = shift;
+    if ( $self->Field eq 'Password' ) {
+        return $self->loc('Password changed');
+    }
+    elsif ( $self->Field eq 'Queue' ) {
+        my $q1 = new RT::Queue( $self->CurrentUser );
+        $q1->Load( $self->OldValue );
+        my $q2 = new RT::Queue( $self->CurrentUser );
+        $q2->Load( $self->NewValue );
+        return $self->loc("[_1] changed from [_2] to [_3]",
+            $self->loc($self->Field) , $q1->Name , $q2->Name);
+    }
+
+    # Write the date/time change at local time:
+    elsif ($self->Field =~ /Due|Starts|Started|Told/) {
+        my $t1 = new RT::Date($self->CurrentUser);
+        $t1->Set(Format => 'ISO', Value => $self->NewValue);
+        my $t2 = new RT::Date($self->CurrentUser);
+        $t2->Set(Format => 'ISO', Value => $self->OldValue);
+        return $self->loc( "[_1] changed from [_2] to [_3]", $self->loc($self->Field), $t2->AsString, $t1->AsString );
+    }
+
+    # show priority as string
+    elsif ($self->Field =~ /Priority|InitialPriority|FinalPriority/) {
+        return $self->loc( "[_1] changed from [_2] to [_3]",
+            $self->loc($self->Field),
+            "'" . $self->loc($self->TicketObj->_PriorityAsString($self->OldValue)) . "'",
+            "'" . $self->loc($self->TicketObj->_PriorityAsString($self->NewValue)) . "'");
+    }
+    else {
+        return $self->loc( "[_1] changed from [_2] to [_3]",
+            $self->loc($self->Field),
+                ($self->OldValue? "'".$self->OldValue ."'" : $self->loc("(no value)")) , "'". $self->NewValue."'" );
+    }
+};
+
 =head1 COPYRIGHT AND LICENCE
 
 Copyright (C) 2008, Best Practical Solutions LLC.
