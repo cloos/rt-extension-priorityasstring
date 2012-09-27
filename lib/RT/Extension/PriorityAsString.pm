@@ -98,9 +98,9 @@ $RT::Transaction::_BriefDescriptions{'Set'} = sub {
         return $self->loc('Password changed');
     }
     elsif ( $self->Field eq 'Queue' ) {
-        my $q1 = new RT::Queue( $self->CurrentUser );
+        my $q1 = RT::Queue->new( $self->CurrentUser );
         $q1->Load( $self->OldValue );
-        my $q2 = new RT::Queue( $self->CurrentUser );
+        my $q2 = RT::Queue->new( $self->CurrentUser );
         $q2->Load( $self->NewValue );
         return $self->loc("[_1] changed from [_2] to [_3]",
             $self->loc($self->Field) , $q1->Name , $q2->Name);
@@ -108,11 +108,44 @@ $RT::Transaction::_BriefDescriptions{'Set'} = sub {
 
     # Write the date/time change at local time:
     elsif ($self->Field =~ /Due|Starts|Started|Told/) {
-        my $t1 = new RT::Date($self->CurrentUser);
+        my $t1 = RT::Date->new($self->CurrentUser);
         $t1->Set(Format => 'ISO', Value => $self->NewValue);
-        my $t2 = new RT::Date($self->CurrentUser);
+        my $t2 = RT::Date->new($self->CurrentUser);
         $t2->Set(Format => 'ISO', Value => $self->OldValue);
         return $self->loc( "[_1] changed from [_2] to [_3]", $self->loc($self->Field), $t2->AsString, $t1->AsString );
+    }
+    elsif ( $self->Field eq 'Owner' ) {
+        my $Old = RT::User->new( $self->CurrentUser );
+        $Old->Load( $self->OldValue );
+        my $New = RT::User->new( $self->CurrentUser );
+        $New->Load( $self->NewValue );
+
+        if ( $Old->id == RT->Nobody->id ) {
+            if ( $New->id == $self->Creator ) {
+                return $self->loc("Taken");
+            }
+            else {
+                return $self->loc( "Given to [_1]",  $New->Name );
+            }
+        }
+        else {
+            if ( $New->id == $self->Creator ) {
+                return $self->loc("Stolen from [_1]",  $Old->Name);
+            }
+            elsif ( $Old->id == $self->Creator ) {
+                if ( $New->id == RT->Nobody->id ) {
+                    return $self->loc("Untaken");
+                }
+                else {
+                    return $self->loc( "Given to [_1]", $New->Name );
+                }
+            }
+            else {
+                return $self->loc(
+                    "Owner forcibly changed from [_1] to [_2]",
+                    $Old->Name, $New->Name );
+            }
+        }
     }
 
     # show priority as string
