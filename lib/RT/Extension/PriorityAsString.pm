@@ -44,6 +44,9 @@ RT::Extension::PriorityAsString - show priorities in RT as strings instead of nu
 
 =cut
 
+use RT;
+RT->AddStyleSheets('priorityasstring.css');
+
 require RT::Ticket;
 package RT::Ticket;
 
