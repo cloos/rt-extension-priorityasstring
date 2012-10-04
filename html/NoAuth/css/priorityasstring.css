@@ -39,3 +39,20 @@
 .ticket-info-final-priority-escalation {
   background: #FF00FF;
 }
+
+/* special print styles */
+@media print {
+    .ticket-info-priority-none,
+    .ticket-info-final-priority-none,
+    .ticket-info-priority-normal,
+    .ticket-info-final-priority-normal,
+    .ticket-info-priority-medium,
+    .ticket-info-final-priority-medium,
+    .ticket-info-priority-high,
+    .ticket-info-final-priority-high,
+    .ticket-info-priority-escalation,
+    .ticket-info-final-priority-escalation {
+        color: black;
+        padding: 0;
+    }
+}
