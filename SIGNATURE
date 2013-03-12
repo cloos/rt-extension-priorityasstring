@@ -1,0 +1,48 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 834009747d2128dc7e4725a22630fb9496ea4385 CHANGES
+SHA1 187195fcb93368384de75a6519f4a41c1b88fbbe MANIFEST
+SHA1 bf9ffb4561fc297dbf98107bd00cd0443e406fc2 META.yml
+SHA1 377b996e43f3f3534d6ae895dc672d4dfef91a05 Makefile.PL
+SHA1 60c2eb1a417493f8e16327fd7a907fd3d202bbe1 README
+SHA1 7e835bbffd68fc8201a9ba2d6af20d1d2abca5d0 etc/PriorityAsString_Config.pm
+SHA1 1a02fc1b5b1fb16bc33ac202c1c1cd1d0388af73 html/Callbacks/PriorityAsString/Elements/RT__Ticket/ColumnMap/Once
+SHA1 362ff9aa44a8b450432cb737080d68a736a3b289 html/Callbacks/PriorityAsString/Search/Elements/PickBasics/Default
+SHA1 a980322cb2f049c04f6e7d226544796bad674871 html/Callbacks/PriorityAsString/Ticket/Elements/EditBasics/MassageFields
+SHA1 4515aa3e875bb19f37b6be1f6855c8ba2093921b html/Elements/SelectPriority
+SHA1 544682bff94fd94a19cc536490195db0d4aeaed1 html/Elements/SelectPriorityAsString
+SHA1 6441ba9ec96549ec8277a2016ae2b8fe0a5d01c6 html/NoAuth/css/priorityasstring.css
+SHA1 aa7ebf0816259a645f02f9105b1f6156ab69e76c html/Ticket/Elements/ShowPriority
+SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
+SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
+SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
+SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
+SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
+SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
+SHA1 43b47fb3c5ec06b71bb175258c8c1b2aaf8a10ab inc/Module/Install/RTx.pm
+SHA1 dc94326a076aca41452c1d65bf52a255feeb9ef7 inc/Module/Install/ReadmeFromPod.pm
+SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
+SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
+SHA1 f309618968adbd4b5c0629e30fb892867f1dce46 lib/RT/Extension/PriorityAsString.pm
+SHA1 07bf8a40107c3076a5d52c65a948ef85a0f16a3c po/de.po
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlE/B5IACgkQ6Mu3rPQqxbd+zgCePrx5yCp1klcX5YsVJ4qKWiFc
+uf4AnRrUoAEImEhze8VmZFxd2KQ/2A59
+=dPyC
+-----END PGP SIGNATURE-----

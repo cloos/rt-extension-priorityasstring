@@ -10,4 +10,5 @@ requires_rt('RT' => '3.8.3');
 
 no_index('package' => 'RT::Ticket');
 
+sign();
 WriteAll();
