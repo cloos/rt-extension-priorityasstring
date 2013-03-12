@@ -36,17 +36,9 @@
 
 /* special print styles */
 @media print {
-    .ticket-info-priority-none,
-    .ticket-info-final-priority-none,
-    .ticket-info-priority-normal,
-    .ticket-info-final-priority-normal,
-    .ticket-info-priority-medium,
-    .ticket-info-final-priority-medium,
-    .ticket-info-priority-high,
-    .ticket-info-final-priority-high,
-    .ticket-info-priority-escalation,
-    .ticket-info-final-priority-escalation {
-        color: black;
+    .ticket-info-priority,
+    .ticket-info-final-priority {
         padding: 0;
+        border-left: none;
     }
 }
