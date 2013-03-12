@@ -4,7 +4,7 @@ use warnings;
 
 package RT::Extension::PriorityAsString;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04_02';
 
 =head1 NAME
 
@@ -21,10 +21,25 @@ RT::Extension::PriorityAsString - show priorities in RT as strings instead of nu
     # numeric representation
     Set(%PriorityAsString, (Low => 0, Medium => 50, High => 100));
 
-    # which order to display the priority strings
-    # if you don't specify this, the strings in the PriorityAsString
-    # hash will be sorted and displayed
-    Set(@PriorityAsStringOrder, qw(Low Medium High));
+    # Fine-tuned control of the order of priorities as displayed in the
+    # drop-down box; usually this computed automatically and need not be
+    # set explicitly.  It can be used to limit the set of options
+    # presented during update, but allow a richer set of levels when
+    # they are adjusted automatically.
+    # Set(@PriorityAsStringOrder, qw(Low Medium High));
+
+    # Uncomment if you want to apply different configurations to
+    # different queues.  Each key is the name of a different queue;
+    # queues which do not appear in this configuration will use RT's
+    # default numeric scale.
+    # This option means that %PriorityAsString and
+    # @PriorityAsStringOrder are ignored (no global override, you must
+    # specify a set of priorities per queue). You can safely leave them
+    # out of your RT_SiteConfig.pm to avoid confusion.
+    # Set(%PriorityAsStringQueues,
+    #    General => { Low => 0, Medium => 50, High => 100 },
+    #    Binary  => { Low => 0, High => 10 },
+    # );
 
 =head1 INSTALLATION
 
@@ -50,12 +65,12 @@ RT->AddStyleSheets('priorityasstring.css');
 require RT::Ticket;
 package RT::Ticket;
 
-=head2 PriorityAsString
+$RT::Config::META{PriorityAsString}{Type} = 'HASH';
+$RT::Config::META{PriorityAsStringOrder}{Type} = 'ARRAY';
+$RT::Config::META{PriorityAsStringQueues}{Type} = 'HASH';
 
-Returns String: Various Ticket Priorities as either a string or integer
 
-=cut
-
+# Returns String: Various Ticket Priorities as either a string or integer
 sub PriorityAsString {
     my $self = shift;
     return $self->_PriorityAsString($self->Priority);
@@ -76,19 +91,19 @@ sub _PriorityAsString {
     my $priority = shift;
     return undef unless defined $priority && length $priority;
 
-    my %map = RT->Config->Get('PriorityAsString');
-    if ( my ($res) = grep $map{$_} == $priority, keys %map ) {
-        return $res;
+    my %map;
+    my $queues = RT->Config->Get('PriorityAsStringQueues');
+    if (@_) {
+        %map = %{ shift(@_) };
+    } elsif ($queues and $queues->{$self->QueueObj->Name}) {
+        %map = %{ $queues->{$self->QueueObj->Name} };
+    } else {
+        %map = RT->Config->Get('PriorityAsString');
     }
 
-    my @order = reverse grep defined && length, RT->Config->Get('PriorityAsStringOrder');
-    @order = sort { $map{$b} <=> $map{$a} } keys %map
-        unless @order;
-
-    # XXX: not supported yet
-    #my $show  = RT->Config->Get('PriorityAsStringShow') || 'string';
-
-    foreach my $label ( @order ) {
+    # Count from high down to low until we find one that our number is
+    # greater than or equal to.
+    foreach my $label ( sort { $map{$b} <=> $map{$a} } keys %map ) {
         return $label if $priority >= $map{ $label };
     }
     return "unknown";
