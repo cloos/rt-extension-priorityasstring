@@ -8,7 +8,7 @@ my $printer = sub {
 
     my $lc_escaped = lc $m->interp->apply_escapes($string, 'h');
     my $loc_escaped = $m->interp->apply_escapes(loc($string), 'h');
-    return \( qq{<span class="ticket-info-$class-$lc_escaped">$loc_escaped</span>} );
+    return \( qq{<span class="ticket-info-$class $lc_escaped">$loc_escaped</span>} );
 
 };
 foreach my $field (qw(Priority InitialPriority FinalPriority)) {

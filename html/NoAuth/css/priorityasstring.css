@@ -1,43 +1,35 @@
-.ticket-info-priority-none,
-.ticket-info-final-priority-none,
-.ticket-info-priority-normal,
-.ticket-info-final-priority-normal,
-.ticket-info-priority-medium,
-.ticket-info-final-priority-medium,
-.ticket-info-priority-high,
-.ticket-info-final-priority-high,
-.ticket-info-priority-escalation,
-.ticket-info-final-priority-escalation {
+.ticket-info-priority,
+.ticket-info-final-priority {
     padding: 0.2em 0.6em;
     border-left: 0.6em solid;
 }
 
-.ticket-info-priority-none,
-.ticket-info-final-priority-none {
+.ticket-info-priority.none,
+.ticket-info-final-priority.none {
     background-color: #DDDDDD;
     border-left-color: #999999;
 }
 
-.ticket-info-priority-normal,
-.ticket-info-final-priority-normal {
+.ticket-info-priority.normal,
+.ticket-info-final-priority.normal {
     background-color: #F0FFE1;
     border-left-color: #316531;
 }
 
-.ticket-info-priority-medium,
-.ticket-info-final-priority-medium {
+.ticket-info-priority.medium,
+.ticket-info-final-priority.medium {
     background-color: #FFEDCF;
     border-left-color: #FFBF00;
 }
 
-.ticket-info-priority-high,
-.ticket-info-final-priority-high {
+.ticket-info-priority.high,
+.ticket-info-final-priority.high {
     background-color: #FFC8C8;
     border-left-color: #BB3322;
 }
 
-.ticket-info-priority-escalation,
-.ticket-info-final-priority-escalation {
+.ticket-info-priority.escalation,
+.ticket-info-final-priority.escalation {
     background-color: #FFBBFF;
     border-left-color: #FF00FF;
 }
