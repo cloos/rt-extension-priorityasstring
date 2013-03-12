@@ -4,6 +4,11 @@
     border-left: 0.6em solid;
 }
 
+.collection-as-table .ticket-info-priority,
+.collection-as-table .ticket-info-final-priority {
+    display: block;
+}
+
 .ticket-info-priority.none,
 .ticket-info-final-priority.none {
     background-color: #DDDDDD;
