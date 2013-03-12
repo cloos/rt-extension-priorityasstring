@@ -8,36 +8,38 @@
 .ticket-info-final-priority-high,
 .ticket-info-priority-escalation,
 .ticket-info-final-priority-escalation {
-  color: white;
-  padding: 0.1em 0.3em;
-  border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -webkit-border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    border-left: 0.6em solid;
 }
 
 .ticket-info-priority-none,
 .ticket-info-final-priority-none {
-    background: #999999;
+    background-color: #DDDDDD;
+    border-left-color: #999999;
 }
 
 .ticket-info-priority-normal,
 .ticket-info-final-priority-normal {
-  background: #316531;
+    background-color: #F0FFE1;
+    border-left-color: #316531;
 }
 
 .ticket-info-priority-medium,
 .ticket-info-final-priority-medium {
-  background: #FFBF00;
+    background-color: #FFEDCF;
+    border-left-color: #FFBF00;
 }
 
 .ticket-info-priority-high,
 .ticket-info-final-priority-high {
-  background: #BB3322;
+    background-color: #FFC8C8;
+    border-left-color: #BB3322;
 }
 
 .ticket-info-priority-escalation,
 .ticket-info-final-priority-escalation {
-  background: #FF00FF;
+    background-color: #FFBBFF;
+    border-left-color: #FF00FF;
 }
 
 /* special print styles */
