@@ -1,0 +1,32 @@
+<select class="select-priority" name="<% $Name %>">
+% unless ( defined $Default ) {
+<option value="">-</option>
+% }
+<%PERL>
+foreach my $label ( @order ) {
+    my ($value, $selected);
+    if ( $label eq $default_label ) {
+        ($value, $selected) = ($Default, 'selected="selected"');
+    } else {
+        ($value, $selected) = ($map{ $label }, '');
+    }
+</%PERL>
+<option class="<% lc $label %>" value="<% $value %>" <% $selected |n %>><% loc($label) %></option>
+% }
+</select>
+<%ARGS>
+$Name => 'Priority'
+$Default => undef
+$Mapping => undef
+</%ARGS>
+<%INIT>
+
+my %map   = $Mapping ? %{ $Mapping } : RT->Config->Get('PriorityAsString');
+my @order = $Mapping ? sort { $map{$a} <=> $map{$b} } keys %map
+  : grep {exists $map{$_}} RT->Config->Get('PriorityAsStringOrder');
+
+my $default_label = '';
+if ( defined $Default && length $Default ) {
+    $default_label = RT::Ticket->_PriorityAsString( $Default, \%map ) || '';
+}
+</%INIT>

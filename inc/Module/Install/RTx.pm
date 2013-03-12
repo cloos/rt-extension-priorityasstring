@@ -8,7 +8,7 @@ no warnings 'once';
 
 use Module::Install::Base;
 use base 'Module::Install::Base';
-our $VERSION = '0.29';
+our $VERSION = '0.29_02';
 
 use FindBin;
 use File::Glob     ();
@@ -129,18 +129,7 @@ install ::
 
     my %has_etc;
     if ( File::Glob::bsd_glob("$FindBin::Bin/etc/schema.*") ) {
-
-        # got schema, load factory module
         $has_etc{schema}++;
-        $self->load('RTxFactory');
-        $self->postamble(<< ".");
-factory ::
-\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxFactory(qw($RTx $name))"
-
-dropdb ::
-\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxFactory(qw($RTx $name drop))"
-
-.
     }
     if ( File::Glob::bsd_glob("$FindBin::Bin/etc/acl.*") ) {
         $has_etc{acl}++;
@@ -164,26 +153,55 @@ dropdb ::
         print "For first-time installation, type 'make initdb'.\n";
         my $initdb = '';
         $initdb .= <<"." if $has_etc{schema};
-\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(schema))"
+\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(schema \$(NAME) \$(VERSION)))"
 .
         $initdb .= <<"." if $has_etc{acl};
-\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(acl))"
+\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(acl \$(NAME) \$(VERSION)))"
 .
         $initdb .= <<"." if $has_etc{initialdata};
-\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(insert))"
+\t\$(NOECHO) \$(PERL) -Ilib -I"$local_lib_path" -I"$lib_path" -Minc::Module::Install -e"RTxInitDB(qw(insert \$(NAME) \$(VERSION)))"
 .
         $self->postamble("initdb ::\n$initdb\n");
         $self->postamble("initialize-database ::\n$initdb\n");
     }
 }
 
-sub RTxInit {
-    unshift @INC, substr( delete( $INC{'RT.pm'} ), 0, -5 ) if $INC{'RT.pm'};
-    require RT;
-    RT::LoadConfig();
-    RT::ConnectToDatabase();
+# stolen from RT::Handle so we work on 3.6 (cmp_versions came in with 3.8)
+{ my %word = (
+    a     => -4,
+    alpha => -4,
+    b     => -3,
+    beta  => -3,
+    pre   => -2,
+    rc    => -1,
+    head  => 9999,
+);
+sub cmp_version($$) {
+    my ($a, $b) = (@_);
+    my @a = grep defined, map { /^[0-9]+$/? $_ : /^[a-zA-Z]+$/? $word{$_}|| -10 : undef }
+        split /([^0-9]+)/, $a;
+    my @b = grep defined, map { /^[0-9]+$/? $_ : /^[a-zA-Z]+$/? $word{$_}|| -10 : undef }
+        split /([^0-9]+)/, $b;
+    @a > @b
+        ? push @b, (0) x (@a-@b)
+        : push @a, (0) x (@b-@a);
+    for ( my $i = 0; $i < @a; $i++ ) {
+        return $a[$i] <=> $b[$i] if $a[$i] <=> $b[$i];
+    }
+    return 0;
+}}
+sub requires_rt {
+    my ($self,$version) = @_;
 
-    die "Cannot load RT" unless $RT::Handle and $RT::DatabaseType;
+    # if we're exactly the same version as what we want, silently return
+    return if ($version eq $RT::VERSION);
+
+    my @sorted = sort cmp_version $version,$RT::VERSION;
+
+    if ($sorted[-1] eq $version) {
+        # should we die?
+        warn "\nWarning: prerequisite RT $version not found. Your installed version of RT ($RT::VERSION) is too old.\n\n";
+    }
 }
 
 # stolen from RT::Handle so we work on 3.6 (cmp_versions came in with 3.8)
@@ -228,4 +246,4 @@ sub requires_rt {
 
 __END__
 
-#line 348
+#line 328

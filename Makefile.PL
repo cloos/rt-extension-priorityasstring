@@ -6,7 +6,7 @@ license     'GPLv2';
 all_from    'lib/RT/Extension/PriorityAsString.pm';
 readme_from 'lib/RT/Extension/PriorityAsString.pm';
 
-requires_rt('4.0.0');
+requires_rt('RT' => '3.8.3');
 
 no_index('package' => 'RT::Ticket');
 
