@@ -15,14 +15,15 @@ not run its Makefile.PL or Build.PL.
 Hash: SHA1
 
 SHA1 834009747d2128dc7e4725a22630fb9496ea4385 CHANGES
-SHA1 afde191d4715da6441f536369df4da8671ea72e1 MANIFEST
+SHA1 cbb9cb34501fe5ddfea15902666296c025ee6b19 MANIFEST
 SHA1 bf9ffb4561fc297dbf98107bd00cd0443e406fc2 META.yml
 SHA1 377b996e43f3f3534d6ae895dc672d4dfef91a05 Makefile.PL
 SHA1 60c2eb1a417493f8e16327fd7a907fd3d202bbe1 README
 SHA1 7e835bbffd68fc8201a9ba2d6af20d1d2abca5d0 etc/PriorityAsString_Config.pm
-SHA1 1a02fc1b5b1fb16bc33ac202c1c1cd1d0388af73 html/Callbacks/PriorityAsString/Elements/RT__Ticket/ColumnMap/Once
+SHA1 5ffeb26e38a4bccf885f67b8ea01f77ea9a9fbf8 html/Callbacks/PriorityAsString/Elements/RT__Ticket/ColumnMap/Once
 SHA1 362ff9aa44a8b450432cb737080d68a736a3b289 html/Callbacks/PriorityAsString/Search/Elements/PickBasics/Default
 SHA1 a980322cb2f049c04f6e7d226544796bad674871 html/Callbacks/PriorityAsString/Ticket/Elements/EditBasics/MassageFields
+SHA1 260f1c9c93d959244dda8e4dc466a8cae959f5ef html/Callbacks/PriorityAsString/Ticket/Elements/ShowTransaction/ModifyDisplay
 SHA1 4515aa3e875bb19f37b6be1f6855c8ba2093921b html/Elements/SelectPriority
 SHA1 544682bff94fd94a19cc536490195db0d4aeaed1 html/Elements/SelectPriorityAsString
 SHA1 6441ba9ec96549ec8277a2016ae2b8fe0a5d01c6 html/NoAuth/css/priorityasstring.css
@@ -37,12 +38,12 @@ SHA1 43b47fb3c5ec06b71bb175258c8c1b2aaf8a10ab inc/Module/Install/RTx.pm
 SHA1 dc94326a076aca41452c1d65bf52a255feeb9ef7 inc/Module/Install/ReadmeFromPod.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
-SHA1 f309618968adbd4b5c0629e30fb892867f1dce46 lib/RT/Extension/PriorityAsString.pm
+SHA1 9f11d014efeb08e9ff19036bf421f2215c2c50d1 lib/RT/Extension/PriorityAsString.pm
 SHA1 07bf8a40107c3076a5d52c65a948ef85a0f16a3c po/de.po
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlE/CT0ACgkQ6Mu3rPQqxbcJkQCfVoVwHwR5llRWEXJ+Vqo1VJ6K
-vrgAoJHNb5sRRhP/ZpkBg4uUeYhAxYz9
-=EMBj
+iEYEARECAAYFAlFON5oACgkQ6Mu3rPQqxbdZnQCgr0R/OH6zW/g5mGNX3UOp0ERP
+6FwAn1+P9syskUe+CHDxSw8JMYSxR1gR
+=jNOi
 -----END PGP SIGNATURE-----
