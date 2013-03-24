@@ -38,12 +38,12 @@ SHA1 43b47fb3c5ec06b71bb175258c8c1b2aaf8a10ab inc/Module/Install/RTx.pm
 SHA1 dc94326a076aca41452c1d65bf52a255feeb9ef7 inc/Module/Install/ReadmeFromPod.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
-SHA1 9f11d014efeb08e9ff19036bf421f2215c2c50d1 lib/RT/Extension/PriorityAsString.pm
+SHA1 b38e67d422b7b03b6fa4b67c635b98ff8b932de7 lib/RT/Extension/PriorityAsString.pm
 SHA1 07bf8a40107c3076a5d52c65a948ef85a0f16a3c po/de.po
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlFON5oACgkQ6Mu3rPQqxbdZnQCgr0R/OH6zW/g5mGNX3UOp0ERP
-6FwAn1+P9syskUe+CHDxSw8JMYSxR1gR
-=jNOi
+iEYEARECAAYFAlFOT0gACgkQ6Mu3rPQqxbfZeQCdFCdWxtu2+2xZSiCiNb4OHQDj
+L8YAn1KNtXR5ZcuZn+89UDRASCkCP4us
+=sJ89
 -----END PGP SIGNATURE-----
