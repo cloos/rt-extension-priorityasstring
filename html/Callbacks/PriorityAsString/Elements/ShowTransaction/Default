@@ -1,7 +1,5 @@
 <%init>
-# check if we are called in the right place
-# because there are two ModifyDisplay callbacks
-return unless defined $$text;
+return unless $Object->isa('RT::Ticket');
 
 # currently not support PriorityAsStringQueues because we had to check
 # in which queue the ticket was when this transaction has run
@@ -12,14 +10,13 @@ return unless $Transaction->Type eq 'Set';
 my $field = $Transaction->Field;
 return unless $field =~ /Priority|InitialPriority|FinalPriority/;
 
-my $Ticket = $Transaction->TicketObj;
-
-$$text = loc( "[_1] changed from [_2] to [_3]",
+$$Description = loc( "[_1] changed from [_2] to [_3]",
     loc($field),
-    "'" . loc($Ticket->_PriorityAsString($Transaction->OldValue)) . "'",
-    "'" . loc($Ticket->_PriorityAsString($Transaction->NewValue)) . "'");
+    "'" . loc($Object->_PriorityAsString($Transaction->OldValue)) . "'",
+    "'" . loc($Object->_PriorityAsString($Transaction->NewValue)) . "'");
 </%init>
 <%args>
-$text        => undef
-$Transaction => undef
+$Object
+$Transaction
+$Description
 </%args>
