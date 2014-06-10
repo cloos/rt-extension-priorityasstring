@@ -14,9 +14,9 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 834009747d2128dc7e4725a22630fb9496ea4385 CHANGES
+SHA1 d11650e830b86dc10f7b09d5c78411b0f6e1ff35 CHANGES
 SHA1 aee2d43e6ee907deb1804e656873f049422d431b MANIFEST
-SHA1 fe812e6bebb1531b5bcb3027137d1d7bb1952b35 META.yml
+SHA1 82fa1dfaca19d3ab9f552690c72354242cc1d02c META.yml
 SHA1 377b996e43f3f3534d6ae895dc672d4dfef91a05 Makefile.PL
 SHA1 60c2eb1a417493f8e16327fd7a907fd3d202bbe1 README
 SHA1 7e835bbffd68fc8201a9ba2d6af20d1d2abca5d0 etc/PriorityAsString_Config.pm
@@ -27,23 +27,23 @@ SHA1 a980322cb2f049c04f6e7d226544796bad674871 html/Callbacks/PriorityAsString/Ti
 SHA1 4515aa3e875bb19f37b6be1f6855c8ba2093921b html/Elements/SelectPriority
 SHA1 544682bff94fd94a19cc536490195db0d4aeaed1 html/Elements/SelectPriorityAsString
 SHA1 aa7ebf0816259a645f02f9105b1f6156ab69e76c html/Ticket/Elements/ShowPriority
-SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
-SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
-SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
-SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
-SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
-SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
-SHA1 40df6f8d889b52eef379f04af6227f9302b23bf9 inc/Module/Install/RTx.pm
+SHA1 dc13ce0dbb488a5de81c3f6519ee31acda17397a inc/Module/Install.pm
+SHA1 91c20cbda8ca41b4e8f9e0390faff635c2ebe839 inc/Module/Install/Base.pm
+SHA1 eaf50ccbacecb797f0527deb0221c8264f6c8bd8 inc/Module/Install/Can.pm
+SHA1 363c8931cc183444907684b71d6a379e4fc8edcb inc/Module/Install/Fetch.pm
+SHA1 26ae1c0f5f352037b560414f216d7e3ac682f936 inc/Module/Install/Makefile.pm
+SHA1 ff97eb025b44c343d026c2a56a73d50c65319e95 inc/Module/Install/Metadata.pm
+SHA1 b3f22a7e59245b7ad864e6d33b95567580f8a225 inc/Module/Install/RTx.pm
 SHA1 79f5b4199f622e8b05aac266b0c39f6a85bb303f inc/Module/Install/ReadmeFromPod.pm
-SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
-SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
-SHA1 b38e67d422b7b03b6fa4b67c635b98ff8b932de7 lib/RT/Extension/PriorityAsString.pm
+SHA1 4c5ce519d404e242418f51dfe761287469e18e3a inc/Module/Install/Win32.pm
+SHA1 47a52cf8719a283c0efa2edab0088b5d67e0f23a inc/Module/Install/WriteAll.pm
+SHA1 3ddc96b769f6caca00d21520877b0154e8514c00 lib/RT/Extension/PriorityAsString.pm
 SHA1 07bf8a40107c3076a5d52c65a948ef85a0f16a3c po/de.po
 SHA1 6441ba9ec96549ec8277a2016ae2b8fe0a5d01c6 static/css/priorityasstring.css
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.14 (GNU/Linux)
 
-iEYEARECAAYFAlMgMGUACgkQ6Mu3rPQqxbdpDgCgmxCql01wzpG+1DKXmo6oZDgo
-aRgAnAwfbdq0ZG52+6k1RbzepsVCJ/Re
-=2vC4
+iEYEARECAAYFAlOW0S0ACgkQ6Mu3rPQqxbdieACePYcIZyyLV1vA2GghxqGm2dwy
+o3IAnRqMs+smMxL0vTpGdiziWrohomy0
+=2hWX
 -----END PGP SIGNATURE-----
