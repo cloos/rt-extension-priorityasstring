@@ -8,12 +8,4 @@ Set(%PriorityAsString, (
     Escalation => 99) #loc_left_pair
 );
 
-Set(@PriorityAsStringOrder, qw(
-    None
-    Normal
-    Medium
-    High
-    Escalation)
-);
-
 1;
