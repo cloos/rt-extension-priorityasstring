@@ -1,7 +1,8 @@
 .ticket-info-priority,
 .ticket-info-final-priority {
     padding: 0.2em 0.6em;
-    border-left: 0.6em solid;
+    background-color: #ddd;
+    border-left: 0.6em solid #999;
 }
 
 .collection-as-table .ticket-info-priority,
@@ -9,34 +10,28 @@
     display: block;
 }
 
-.ticket-info-priority.none,
-.ticket-info-final-priority.none {
-    background-color: #DDDDDD;
-    border-left-color: #999999;
-}
-
 .ticket-info-priority.normal,
 .ticket-info-final-priority.normal {
-    background-color: #F0FFE1;
-    border-left-color: #316531;
+    background-color: #f0ffe1;
+    border-color: #316531;
 }
 
 .ticket-info-priority.medium,
 .ticket-info-final-priority.medium {
-    background-color: #FFEDCF;
-    border-left-color: #FFBF00;
+    background-color: #ffedcf;
+    border-color: #ffbf00;
 }
 
 .ticket-info-priority.high,
 .ticket-info-final-priority.high {
-    background-color: #FFC8C8;
-    border-left-color: #BB3322;
+    background-color: #ffc8c8;
+    border-color: #bb3322;
 }
 
 .ticket-info-priority.escalation,
 .ticket-info-final-priority.escalation {
-    background-color: #FFBBFF;
-    border-left-color: #FF00FF;
+    background-color: #ffbbff;
+    border-color: #ff00ff;
 }
 
 /* special print styles */
@@ -44,6 +39,6 @@
     .ticket-info-priority,
     .ticket-info-final-priority {
         padding: 0;
-        border-left: none;
+        border: none;
     }
 }
