@@ -1,8 +1,8 @@
 .ticket-info-priority,
 .ticket-info-final-priority {
-    padding: 0.2em 0.6em;
+    padding: 0.2em 0.4em;
     background-color: #ddd;
-    border-left: 0.6em solid #999;
+    border-left: 0.4em solid #999;
 }
 
 .collection-as-table .ticket-info-priority,
