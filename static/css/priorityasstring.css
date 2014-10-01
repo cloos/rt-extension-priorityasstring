@@ -3,11 +3,8 @@
     padding: 0.2em 0.4em;
     background-color: #ddd;
     border-left: 0.4em solid #999;
-}
-
-.collection-as-table .ticket-info-priority,
-.collection-as-table .ticket-info-final-priority {
-    display: block;
+    width: 5em;
+    display: inline-block;
 }
 
 .ticket-info-priority.normal,
