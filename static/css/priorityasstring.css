@@ -36,6 +36,7 @@
     .ticket-info-priority,
     .ticket-info-final-priority {
         padding: 0;
+        background-color: transparent !important;
         border: none;
     }
 }
