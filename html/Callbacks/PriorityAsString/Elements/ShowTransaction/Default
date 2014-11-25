@@ -6,7 +6,6 @@ return unless $Object->isa('RT::Ticket');
 return if defined RT->Config->Get('PriorityAsStringQueues');
 return unless defined RT->Config->Get('PriorityAsString');
 
-return unless $Transaction->Type eq 'Set';
 my $field = $Transaction->Field || '';
 return unless $field =~ /^(?:Initial|Final)?Priority$/;
 
