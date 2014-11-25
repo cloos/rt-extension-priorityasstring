@@ -124,6 +124,24 @@ sub _PriorityAsString {
     return "unknown";
 }
 
+{
+    package RT::Report::Tickets;
+    use RT::Report::Tickets;
+
+    our %GROUPINGS_META;
+
+    if ( RT->Config->Get('PriorityAsStringQueues') ) {
+        RT->Logger->notice("Grouping by Priority with PriorityAsStringQueues isn't currently implemented");
+    } else {
+        $GROUPINGS_META{'Priority'}->{'Display'} = sub {
+            my $self = shift;
+            my %args = (@_);
+            my $t = RT::Ticket->new($self->CurrentUser);
+            return $self->loc( $t->_PriorityAsString($args{'VALUE'}) );
+        };
+    }
+}
+
 =head1 AUTHOR
 
 Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
