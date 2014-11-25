@@ -8,7 +8,7 @@ return unless defined RT->Config->Get('PriorityAsString');
 
 return unless $Transaction->Type eq 'Set';
 my $field = $Transaction->Field || '';
-return unless $field =~ /Priority|InitialPriority|FinalPriority/;
+return unless $field =~ /^(?:Initial|Final)?Priority$/;
 
 my $old_value = $Object->_PriorityAsString($Transaction->OldValue);
 my $new_value = $Object->_PriorityAsString($Transaction->NewValue);
