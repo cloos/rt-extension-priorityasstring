@@ -73,8 +73,6 @@ or add C<RT::Extension::PriorityAsString> to your existing C<@Plugins> line.
 
 =cut
 
-RT->AddStyleSheets('priorityasstring.css');
-
 require RT::Ticket;
 package RT::Ticket;
 
