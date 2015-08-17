@@ -1,5 +1,4 @@
 CHANGES
-etc/PriorityAsString_Config.pm
 html/Callbacks/PriorityAsString/Elements/RT__Ticket/ColumnMap/Once
 html/Callbacks/PriorityAsString/Elements/ShowTransaction/Default
 html/Callbacks/PriorityAsString/Search/Elements/PickBasics/Default
